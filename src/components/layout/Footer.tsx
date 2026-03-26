@@ -68,6 +68,7 @@ export function Footer() {
             <Link to="/privacy" className="hover:text-gray-900 transition-colors">Privacy</Link>
             <Link to="/terms" className="hover:text-gray-900 transition-colors">Terms</Link>
             <Link to="/sitemap.xml" className="hover:text-gray-900 transition-colors">Sitemap</Link>
+            <Link to="/admin" className="hover:text-gray-900 transition-colors opacity-0 hover:opacity-100 transition-opacity">Admin</Link>
           </div>
         </div>
       </div>

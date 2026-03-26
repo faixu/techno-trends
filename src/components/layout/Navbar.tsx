@@ -33,8 +33,7 @@ export function Navbar() {
               { name: 'Excel', path: '/excel-tips' },
               { name: 'SQL', path: '/sql-tips' },
               { name: 'AI', path: '/agentic-ai' },
-              { name: 'Gadgets', path: '/category/gadgets-&-reviews' },
-              { name: 'Dashboard', path: '/admin' }
+              { name: 'Gadgets', path: '/category/gadgets-&-reviews' }
             ].map((item) => (
               <Link 
                 key={item.name} 
@@ -71,9 +70,7 @@ export function Navbar() {
           {[
             { name: 'Excel Mastery', path: '/excel-tips' },
             { name: 'SQL Mastery', path: '/sql-tips' },
-            { name: 'Agentic AI', path: '/agentic-ai' },
-            { name: 'Admin Dashboard', path: '/admin' },
-            { name: 'Write New Post', path: '/admin/create' }
+            { name: 'Agentic AI', path: '/agentic-ai' }
           ].map((item) => (
             <Link 
               key={item.name}
