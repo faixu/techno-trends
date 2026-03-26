@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://ais-pre-egskdi6lrrsdvulehfzjbn-339432889630.asia-east1.run.app/</loc>
+    <lastmod>2026-03-26</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://ais-pre-egskdi6lrrsdvulehfzjbn-339432889630.asia-east1.run.app/excel-tips</loc>
+    <lastmod>2026-03-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ais-pre-egskdi6lrrsdvulehfzjbn-339432889630.asia-east1.run.app/sql-tips</loc>
+    <lastmod>2026-03-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ais-pre-egskdi6lrrsdvulehfzjbn-339432889630.asia-east1.run.app/agentic-ai</loc>
+    <lastmod>2026-03-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- Main Articles -->
+  <url>
+    <loc>https://ais-pre-egskdi6lrrsdvulehfzjbn-339432889630.asia-east1.run.app/article/future-of-generative-ai</loc>
+    <lastmod>2026-03-26</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://ais-pre-egskdi6lrrsdvulehfzjbn-339432889630.asia-east1.run.app/article/iphone-17-pro-max-review</loc>
+    <lastmod>2026-03-26</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ais-pre-egskdi6lrrsdvulehfzjbn-339432889630.asia-east1.run.app/article/top-productivity-apps-2026</loc>
+    <lastmod>2026-03-26</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ais-pre-egskdi6lrrsdvulehfzjbn-339432889630.asia-east1.run.app/article/smart-home-budget-guide</loc>
+    <lastmod>2026-03-26</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ais-pre-egskdi6lrrsdvulehfzjbn-339432889630.asia-east1.run.app/article/foldable-laptops-trend</loc>
+    <lastmod>2026-03-26</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ais-pre-egskdi6lrrsdvulehfzjbn-339432889630.asia-east1.run.app/article/ultimate-guide-to-offline-apps</loc>
+    <lastmod>2026-03-26</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <!-- Excel Tips (Sample) -->
+  <url><loc>https://ais-pre-egskdi6lrrsdvulehfzjbn-339432889630.asia-east1.run.app/article/mastering-vlookup-in-5-minutes</loc><lastmod>2026-03-26</lastmod></url>
+  <url><loc>https://ais-pre-egskdi6lrrsdvulehfzjbn-339432889630.asia-east1.run.app/article/how-to-use-xlookup-the-vlookup-killer</loc><lastmod>2026-03-26</lastmod></url>
+  <url><loc>https://ais-pre-egskdi6lrrsdvulehfzjbn-339432889630.asia-east1.run.app/article/pivot-tables-for-beginners-a-step-by-step-guide</loc><lastmod>2026-03-26</lastmod></url>
+  <!-- SQL Tips (Sample) -->
+  <url><loc>https://ais-pre-egskdi6lrrsdvulehfzjbn-339432889630.asia-east1.run.app/article/mastering-the-select-statement-the-foundation-of-sql</loc><lastmod>2026-03-26</lastmod></url>
+  <url><loc>https://ais-pre-egskdi6lrrsdvulehfzjbn-339432889630.asia-east1.run.app/article/understanding-sql-joins-inner-left-right-and-full</loc><lastmod>2026-03-26</lastmod></url>
+  <!-- Agentic AI (Sample) -->
+  <url><loc>https://ais-pre-egskdi6lrrsdvulehfzjbn-339432889630.asia-east1.run.app/article/the-rise-of-autonomous-agents-from-llms-to-lmms</loc><lastmod>2026-03-26</lastmod></url>
+  <url><loc>https://ais-pre-egskdi6lrrsdvulehfzjbn-339432889630.asia-east1.run.app/article/building-agentic-workflows-a-comprehensive-guide-to-langgraph-and-crewai</loc><lastmod>2026-03-26</lastmod></url>
+</urlset>
