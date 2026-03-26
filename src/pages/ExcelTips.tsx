@@ -14,8 +14,10 @@ export default function ExcelTips() {
 
   React.useEffect(() => {
     const localPosts = JSON.parse(localStorage.getItem('tecno_trends_posts') || '[]');
+    const deletedStaticIds = JSON.parse(localStorage.getItem('tecno_trends_deleted_static_ids') || '[]');
     const excelLocalPosts = localPosts.filter((p: Post) => p.category === "Excel Mastery");
-    setAllPosts([...excelLocalPosts, ...EXCEL_POSTS]);
+    const filteredStatic = EXCEL_POSTS.filter(p => !deletedStaticIds.includes(p.id));
+    setAllPosts([...excelLocalPosts, ...filteredStatic]);
   }, []);
 
   const filteredPosts = allPosts.filter(post => 

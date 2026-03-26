@@ -1,40 +1,37 @@
 import { Link } from 'react-router-dom';
-import { Facebook, Twitter, Instagram, Linkedin, Github, Mail, ArrowRight } from 'lucide-react';
+import { Facebook, Twitter, Instagram, Linkedin, Github } from 'lucide-react';
 
 export function Footer() {
   return (
-    <footer className="bg-gray-900 text-gray-300 pt-20 pb-10">
+    <footer className="bg-white border-t border-gray-100 pt-24 pb-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-12 mb-24">
           {/* Brand */}
-          <div className="space-y-6">
-            <Link to="/" className="flex items-center space-x-2">
-              <div className="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-xl">T</span>
-              </div>
-              <span className="text-2xl font-bold tracking-tight text-white">
-                Tecno<span className="text-blue-600">Trends</span>
+          <div className="md:col-span-4 space-y-8">
+            <Link to="/" className="flex items-center">
+              <span className="text-xl font-light tracking-tighter text-gray-900">
+                TECNO<span className="font-bold">TRENDS</span>
               </span>
             </Link>
-            <p className="text-gray-400 leading-relaxed">
-              Your daily source for the latest in technology, AI, gadgets, and future trends. We simplify the complex world of tech.
+            <p className="text-gray-400 text-sm leading-relaxed max-w-xs">
+              Curating the future of technology through a minimalistic lens. Simple, focused, and insightful.
             </p>
-            <div className="flex space-x-4">
-              {[Facebook, Twitter, Instagram, Linkedin, Github].map((Icon, i) => (
-                <a key={i} href="#" className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-blue-600 hover:text-white transition-all">
-                  <Icon className="w-5 h-5" />
+            <div className="flex space-x-6">
+              {[Twitter, Instagram, Linkedin, Github].map((Icon, i) => (
+                <a key={i} href="#" className="text-gray-400 hover:text-gray-900 transition-colors">
+                  <Icon className="w-4 h-4" />
                 </a>
               ))}
             </div>
           </div>
 
-          {/* Quick Links */}
-          <div>
-            <h4 className="text-white font-bold mb-6">Quick Links</h4>
+          {/* Links */}
+          <div className="md:col-span-2 space-y-6">
+            <h4 className="text-[10px] font-bold uppercase tracking-widest text-gray-900">Explore</h4>
             <ul className="space-y-4">
-              {['About Us', 'Contact Us', 'Privacy Policy', 'Disclaimer', 'Terms of Service'].map((item) => (
+              {['Excel', 'SQL', 'AI', 'Gadgets'].map((item) => (
                 <li key={item}>
-                  <Link to={`/${item.toLowerCase().replace(/ /g, '-')}`} className="hover:text-blue-500 transition-colors">
+                  <Link to={`/category/${item.toLowerCase()}`} className="text-sm text-gray-400 hover:text-gray-900 transition-colors">
                     {item}
                   </Link>
                 </li>
@@ -42,13 +39,12 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Categories */}
-          <div>
-            <h4 className="text-white font-bold mb-6">Categories</h4>
+          <div className="md:col-span-2 space-y-6">
+            <h4 className="text-[10px] font-bold uppercase tracking-widest text-gray-900">Company</h4>
             <ul className="space-y-4">
-              {['AI & Future Tech', 'Smartphones', 'Gadgets & Reviews', 'Apps & Tools', 'How-To Guides'].map((item) => (
+              {['About', 'Contact', 'Privacy', 'Terms'].map((item) => (
                 <li key={item}>
-                  <Link to={`/category/${item.toLowerCase().replace(/ & /g, '-').replace(/ /g, '-')}`} className="hover:text-blue-500 transition-colors">
+                  <Link to={`/${item.toLowerCase()}`} className="text-sm text-gray-400 hover:text-gray-900 transition-colors">
                     {item}
                   </Link>
                 </li>
@@ -56,25 +52,23 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Newsletter */}
-          <div>
-            <h4 className="text-white font-bold mb-6">Newsletter</h4>
-            <p className="text-gray-400 mb-6">Get the latest tech news delivered to your inbox weekly.</p>
-            <form className="relative">
-              <input 
-                type="email" 
-                placeholder="Your email address"
-                className="w-full bg-gray-800 border border-gray-700 rounded-xl py-3 px-4 text-white focus:outline-none focus:border-blue-600 transition-colors"
-              />
-              <button className="absolute right-2 top-2 bg-blue-600 p-1.5 rounded-lg hover:bg-blue-700 transition-colors">
-                <ArrowRight className="w-5 h-5 text-white" />
-              </button>
-            </form>
+          {/* Contact */}
+          <div className="md:col-span-4 space-y-6">
+            <h4 className="text-[10px] font-bold uppercase tracking-widest text-gray-900">Connect</h4>
+            <p className="text-sm text-gray-400">Questions or feedback? Reach out to us anytime.</p>
+            <a href="mailto:hello@tecnotrends.com" className="block text-lg font-light tracking-tight text-gray-900 hover:text-blue-600 transition-colors">
+              hello@tecnotrends.com
+            </a>
           </div>
         </div>
 
-        <div className="pt-8 border-t border-gray-800 text-center text-sm text-gray-500">
-          <p>© {new Date().getFullYear()} Tecno Trends. All rights reserved. Designed for high conversion.</p>
+        <div className="pt-12 border-t border-gray-50 flex flex-col md:flex-row justify-between items-center gap-6 text-[10px] font-bold uppercase tracking-widest text-gray-400">
+          <p>© {new Date().getFullYear()} TECNO TRENDS</p>
+          <div className="flex space-x-8">
+            <Link to="/privacy" className="hover:text-gray-900 transition-colors">Privacy</Link>
+            <Link to="/terms" className="hover:text-gray-900 transition-colors">Terms</Link>
+            <Link to="/sitemap.xml" className="hover:text-gray-900 transition-colors">Sitemap</Link>
+          </div>
         </div>
       </div>
     </footer>

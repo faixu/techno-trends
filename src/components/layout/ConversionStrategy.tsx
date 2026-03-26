@@ -34,32 +34,32 @@ export function ConversionStrategy() {
             initial={{ y: 100 }}
             animate={{ y: 0 }}
             exit={{ y: 100 }}
-            className="fixed bottom-0 left-0 right-0 z-[60] bg-gray-900 border-t border-gray-800 p-4 shadow-2xl"
+            className="fixed bottom-0 left-0 right-0 z-[60] bg-white border-t border-gray-100 p-6 shadow-[0_-10px_40px_rgba(0,0,0,0.05)]"
           >
-            <div className="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
-              <div className="flex items-center space-x-4">
-                <div className="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center animate-bounce">
+            <div className="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-6">
+              <div className="flex items-center space-x-6">
+                <div className="w-12 h-12 bg-gray-900 rounded-sm flex items-center justify-center">
                   <Bell className="w-5 h-5 text-white" />
                 </div>
                 <div>
-                  <p className="text-white font-bold">Don't miss out on the latest tech trends!</p>
-                  <p className="text-gray-400 text-xs">Join 50k+ readers getting weekly updates.</p>
+                  <p className="text-sm font-bold text-gray-900 uppercase tracking-widest">Stay ahead of the curve</p>
+                  <p className="text-gray-400 text-[10px] uppercase tracking-[0.2em] mt-1">Weekly tech insights delivered to your inbox.</p>
                 </div>
               </div>
               <div className="flex items-center space-x-4 w-full sm:w-auto">
                 <input 
                   type="email" 
-                  placeholder="Enter your email"
-                  className="bg-gray-800 border border-gray-700 rounded-lg px-4 py-2 text-white text-sm focus:outline-none focus:border-blue-600 flex-grow sm:w-64"
+                  placeholder="Your email address"
+                  className="bg-gray-50 border border-gray-100 rounded-sm px-6 py-3 text-xs font-light focus:outline-none focus:ring-1 focus:ring-blue-600 flex-grow sm:w-72 transition-all"
                 />
-                <button className="bg-blue-600 text-white px-6 py-2 rounded-lg text-sm font-bold hover:bg-blue-700 transition-all whitespace-nowrap">
-                  Join Now
+                <button className="bg-gray-900 text-white px-8 py-3 rounded-sm text-[10px] font-bold uppercase tracking-widest hover:bg-blue-600 transition-all whitespace-nowrap">
+                  Subscribe
                 </button>
                 <button 
                   onClick={() => setShowStickyBar(false)}
-                  className="text-gray-500 hover:text-white"
+                  className="text-gray-300 hover:text-gray-900 transition-colors ml-2"
                 >
-                  <X className="w-5 h-5" />
+                  <X className="w-4 h-4" />
                 </button>
               </div>
             </div>
@@ -70,40 +70,45 @@ export function ConversionStrategy() {
       {/* Exit Intent Popup */}
       <AnimatePresence>
         {showExitIntent && (
-          <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
+          <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/40 backdrop-blur-[2px]">
             <motion.div 
-              initial={{ scale: 0.9, opacity: 0 }}
+              initial={{ scale: 0.98, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.9, opacity: 0 }}
-              className="bg-white rounded-[2.5rem] max-w-2xl w-full overflow-hidden shadow-2xl relative"
+              exit={{ scale: 0.98, opacity: 0 }}
+              className="bg-white rounded-sm max-w-3xl w-full overflow-hidden shadow-2xl relative border border-gray-100"
             >
               <button 
                 onClick={() => setShowExitIntent(false)}
-                className="absolute top-6 right-6 p-2 text-gray-400 hover:text-gray-900 transition-colors z-10"
+                className="absolute top-8 right-8 p-2 text-gray-300 hover:text-gray-900 transition-colors z-10"
               >
-                <X className="w-6 h-6" />
+                <X className="w-5 h-5" />
               </button>
 
               <div className="grid grid-cols-1 md:grid-cols-2">
-                <div className="bg-blue-600 p-12 text-white flex flex-col justify-center space-y-6">
-                  <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center">
-                    <ZapIcon className="w-8 h-8" />
+                <div className="bg-gray-900 p-16 text-white flex flex-col justify-center space-y-8">
+                  <div className="w-14 h-14 bg-white/10 rounded-sm flex items-center justify-center">
+                    <ZapIcon className="w-6 h-6 text-blue-400" />
                   </div>
-                  <h3 className="text-3xl font-extrabold leading-tight">Wait! Get our "Top 10 AI Tools" PDF for FREE.</h3>
-                  <p className="text-blue-100">Before you go, grab our exclusive guide to the tools that will redefine 2026.</p>
+                  <div className="space-y-4">
+                    <h3 className="text-3xl font-light leading-tight tracking-tight">The 2026 AI Playbook</h3>
+                    <p className="text-gray-400 text-sm font-light leading-relaxed">Download our exclusive guide to the tools that will redefine the next decade. Free for a limited time.</p>
+                  </div>
                 </div>
-                <div className="p-12 flex flex-col justify-center">
-                  <form className="space-y-4">
-                    <input 
-                      type="email" 
-                      placeholder="Enter your email address"
-                      className="w-full bg-gray-50 border border-gray-100 rounded-xl py-4 px-6 focus:outline-none focus:ring-2 focus:ring-blue-600"
-                    />
-                    <button className="w-full bg-blue-600 text-white py-4 rounded-xl font-bold text-lg hover:bg-blue-700 transition-all shadow-lg shadow-blue-100">
-                      Send Me the PDF
+                <div className="p-16 flex flex-col justify-center bg-white">
+                  <form className="space-y-6">
+                    <div className="space-y-2">
+                      <label className="text-[10px] font-bold uppercase tracking-widest text-gray-400">Email Address</label>
+                      <input 
+                        type="email" 
+                        placeholder="alex@example.com"
+                        className="w-full bg-gray-50 border border-gray-100 rounded-sm py-4 px-6 text-sm font-light focus:outline-none focus:ring-1 focus:ring-blue-600 transition-all"
+                      />
+                    </div>
+                    <button className="w-full bg-gray-900 text-white py-4 rounded-sm text-[10px] font-bold uppercase tracking-[0.2em] hover:bg-blue-600 transition-all duration-300 shadow-xl">
+                      Get the Guide
                     </button>
-                    <p className="text-center text-xs text-gray-400">
-                      We value your privacy. Unsubscribe at any time.
+                    <p className="text-center text-[9px] text-gray-300 uppercase tracking-widest">
+                      Privacy first. No spam, ever.
                     </p>
                   </form>
                 </div>

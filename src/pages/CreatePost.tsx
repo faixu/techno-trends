@@ -19,6 +19,8 @@ const CATEGORIES: Category[] = [
 export default function CreatePost() {
   const navigate = useNavigate();
   const [isPreview, setIsPreview] = React.useState(false);
+  const [isSubmitting, setIsSubmitting] = React.useState(false);
+  const [isSuccess, setIsSuccess] = React.useState(false);
   const [formData, setFormData] = React.useState({
     title: '',
     category: CATEGORIES[0],
@@ -36,6 +38,7 @@ export default function CreatePost() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    setIsSubmitting(true);
     
     const newPost: Post = {
       id: Date.now().toString(),
@@ -61,8 +64,11 @@ export default function CreatePost() {
     const existingPosts = JSON.parse(localStorage.getItem('tecno_trends_posts') || '[]');
     localStorage.setItem('tecno_trends_posts', JSON.stringify([newPost, ...existingPosts]));
 
-    alert('Post created successfully!');
-    navigate('/');
+    setIsSubmitting(false);
+    setIsSuccess(true);
+    setTimeout(() => {
+      navigate('/admin');
+    }, 1500);
   };
 
   return (
@@ -94,13 +100,40 @@ export default function CreatePost() {
               </button>
               <button 
                 onClick={handleSubmit}
-                className="flex items-center bg-blue-600 text-white px-8 py-2.5 rounded-xl font-bold hover:bg-blue-700 transition-all shadow-lg shadow-blue-100"
+                disabled={isSubmitting || isSuccess}
+                className={cn(
+                  "flex items-center bg-blue-600 text-white px-8 py-2.5 rounded-xl font-bold transition-all shadow-lg shadow-blue-100",
+                  (isSubmitting || isSuccess) ? "opacity-70 cursor-not-allowed" : "hover:bg-blue-700"
+                )}
               >
-                <Save className="w-5 h-5 mr-2" />
-                Publish Post
+                {isSubmitting ? (
+                  <span className="flex items-center">
+                    <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                      <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                      <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                    </svg>
+                    Publishing...
+                  </span>
+                ) : isSuccess ? (
+                  'Success!'
+                ) : (
+                  <>
+                    <Save className="w-5 h-5 mr-2" />
+                    Publish Post
+                  </>
+                )}
               </button>
             </div>
           </div>
+
+          {isSuccess && (
+            <div className="mb-8 bg-green-50 border border-green-100 text-green-700 px-6 py-4 rounded-2xl flex items-center animate-in fade-in slide-in-from-top-4 duration-300">
+              <div className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center mr-4">
+                <Save className="w-4 h-4" />
+              </div>
+              <p className="font-bold">Post published successfully! Redirecting to dashboard...</p>
+            </div>
+          )}
 
           <div className="grid grid-cols-1 gap-8">
             {!isPreview ? (

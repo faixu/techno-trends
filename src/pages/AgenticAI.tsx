@@ -14,8 +14,10 @@ export default function AgenticAI() {
 
   React.useEffect(() => {
     const localPosts = JSON.parse(localStorage.getItem('tecno_trends_posts') || '[]');
+    const deletedStaticIds = JSON.parse(localStorage.getItem('tecno_trends_deleted_static_ids') || '[]');
     const agenticLocalPosts = localPosts.filter((p: Post) => p.category === "Agentic AI");
-    setAllPosts([...agenticLocalPosts, ...AGENTIC_AI_POSTS]);
+    const filteredStatic = AGENTIC_AI_POSTS.filter(p => !deletedStaticIds.includes(p.id));
+    setAllPosts([...agenticLocalPosts, ...filteredStatic]);
   }, []);
 
   const filteredPosts = allPosts.filter(post => 

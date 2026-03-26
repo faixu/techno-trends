@@ -14,8 +14,10 @@ export default function SQLTips() {
 
   React.useEffect(() => {
     const localPosts = JSON.parse(localStorage.getItem('tecno_trends_posts') || '[]');
+    const deletedStaticIds = JSON.parse(localStorage.getItem('tecno_trends_deleted_static_ids') || '[]');
     const sqlLocalPosts = localPosts.filter((p: Post) => p.category === "SQL Mastery");
-    setAllPosts([...sqlLocalPosts, ...SQL_POSTS]);
+    const filteredStatic = SQL_POSTS.filter(p => !deletedStaticIds.includes(p.id));
+    setAllPosts([...sqlLocalPosts, ...filteredStatic]);
   }, []);
 
   const filteredPosts = allPosts.filter(post => 
