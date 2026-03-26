@@ -20,6 +20,7 @@ import { EXCEL_POSTS } from '../data/excelPosts';
 import { SQL_POSTS } from '../data/sqlPosts';
 import { AGENTIC_AI_POSTS } from '../data/agenticAiPosts';
 import { OFFLINE_APPS_POST } from '../data/offlineAppsPost';
+import { GADGET_REVIEWS } from '../data/gadgetReviews';
 import { Post } from '../types';
 
 export default function Article() {
@@ -64,7 +65,7 @@ export default function Article() {
   React.useEffect(() => {
     const localPosts = JSON.parse(localStorage.getItem('tecno_trends_posts') || '[]');
     const deletedStaticIds = JSON.parse(localStorage.getItem('tecno_trends_deleted_static_ids') || '[]');
-    const staticPosts = [...OFFLINE_APPS_POST, ...AGENTIC_AI_POSTS, ...SQL_POSTS, ...EXCEL_POSTS, ...MOCK_POSTS];
+    const staticPosts = [...GADGET_REVIEWS, ...OFFLINE_APPS_POST, ...AGENTIC_AI_POSTS, ...SQL_POSTS, ...EXCEL_POSTS, ...MOCK_POSTS];
     const filteredStatic = staticPosts.filter(p => !deletedStaticIds.includes(p.id));
     const allPosts = [...localPosts, ...filteredStatic];
     const foundPost = allPosts.find(p => p.slug === slug);

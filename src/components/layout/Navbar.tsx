@@ -33,6 +33,7 @@ export function Navbar() {
               { name: 'Excel', path: '/excel-tips' },
               { name: 'SQL', path: '/sql-tips' },
               { name: 'AI', path: '/agentic-ai' },
+              { name: 'Gadgets', path: '/category/gadgets-&-reviews' },
               { name: 'Dashboard', path: '/admin' }
             ].map((item) => (
               <Link 

@@ -9,6 +9,7 @@ import { EXCEL_POSTS } from '../data/excelPosts';
 import { SQL_POSTS } from '../data/sqlPosts';
 import { AGENTIC_AI_POSTS } from '../data/agenticAiPosts';
 import { OFFLINE_APPS_POST } from '../data/offlineAppsPost';
+import { GADGET_REVIEWS } from '../data/gadgetReviews';
 
 export default function AdminDashboard() {
   const navigate = useNavigate();
@@ -21,7 +22,7 @@ export default function AdminDashboard() {
     const localPosts = JSON.parse(localStorage.getItem('tecno_trends_posts') || '[]');
     const deletedStaticIds = JSON.parse(localStorage.getItem('tecno_trends_deleted_static_ids') || '[]');
     
-    const staticPosts = [...OFFLINE_APPS_POST, ...AGENTIC_AI_POSTS, ...SQL_POSTS, ...EXCEL_POSTS, ...MOCK_POSTS];
+    const staticPosts = [...GADGET_REVIEWS, ...OFFLINE_APPS_POST, ...AGENTIC_AI_POSTS, ...SQL_POSTS, ...EXCEL_POSTS, ...MOCK_POSTS];
     const filteredStatic = staticPosts.filter(p => !deletedStaticIds.includes(p.id));
     
     setAllPosts([...localPosts, ...filteredStatic]);
@@ -142,7 +143,7 @@ export default function AdminDashboard() {
                 <tbody className="divide-y divide-gray-50">
                   {filteredPosts.length > 0 ? (
                     filteredPosts.map((post) => {
-                      const isStatic = [...OFFLINE_APPS_POST, ...AGENTIC_AI_POSTS, ...SQL_POSTS, ...EXCEL_POSTS, ...MOCK_POSTS].some(p => p.id === post.id);
+                      const isStatic = [...GADGET_REVIEWS, ...OFFLINE_APPS_POST, ...AGENTIC_AI_POSTS, ...SQL_POSTS, ...EXCEL_POSTS, ...MOCK_POSTS].some(p => p.id === post.id);
                       return (
                         <tr key={post.id} className="hover:bg-gray-50/50 transition-colors group">
                           <td className="px-8 py-6">
