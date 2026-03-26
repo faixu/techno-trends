@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import { Analytics } from '@vercel/analytics/react';
 import Home from './pages/Home';
 import Article from './pages/Article';
 import CreatePost from './pages/CreatePost';
@@ -29,6 +30,7 @@ export default function App() {
         {/* Fallback to home for demo purposes */}
         <Route path="*" element={<Home />} />
       </Routes>
+      <Analytics />
     </Router>
   );
 }
