@@ -172,7 +172,7 @@ export default function Article() {
               </div>
 
               <div className="space-y-12">
-                <h3 className="text-[10px] font-bold uppercase tracking-widest text-gray-900 border-b border-gray-100 pb-4">Related</h3>
+                <h3 className="text-[10px] font-bold uppercase tracking-widest text-gray-900 border-b border-gray-100 pb-4">Related Posts</h3>
                 <div className="space-y-12">
                   {relatedPosts.map(related => (
                     <Link key={related.id} to={`/article/${related.slug}`} className="group block space-y-4">
