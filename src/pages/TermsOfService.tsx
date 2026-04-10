@@ -65,7 +65,7 @@ export default function TermsOfService() {
             <section className="space-y-4">
               <h2 className="text-xl font-bold text-gray-900 uppercase tracking-widest">6. Contact Us</h2>
               <p>
-                If you have any questions about these Terms, please contact us at: <a href="mailto:legal@tecnotrends.com" className="text-blue-600 hover:underline">legal@tecnotrends.com</a>
+                If you have any questions about these Terms, please contact us at: <a href="mailto:faisal.hassan.0996@gmail.com" className="text-blue-600 hover:underline">faisal.hassan.0996@gmail.com</a>
               </p>
             </section>
           </div>

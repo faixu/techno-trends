@@ -56,8 +56,8 @@ export function Footer() {
           <div className="md:col-span-4 space-y-6">
             <h4 className="text-[10px] font-bold uppercase tracking-widest text-gray-900">Connect</h4>
             <p className="text-sm text-gray-400">Questions or feedback? Reach out to us anytime.</p>
-            <a href="mailto:hello@tecnotrends.com" className="block text-lg font-light tracking-tight text-gray-900 hover:text-blue-600 transition-colors">
-              hello@tecnotrends.com
+            <a href="mailto:faisal.hassan.0996@gmail.com" className="block text-lg font-light tracking-tight text-gray-900 hover:text-blue-600 transition-colors">
+              faisal.hassan.0996@gmail.com
             </a>
           </div>
         </div>

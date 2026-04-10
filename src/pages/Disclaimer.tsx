@@ -57,7 +57,7 @@ export default function Disclaimer() {
             <section className="space-y-4">
               <h2 className="text-xl font-bold text-gray-900 uppercase tracking-widest">6. Contact Us</h2>
               <p>
-                Should you have any feedback, comments, requests for technical support or other inquiries, please contact us by email: <a href="mailto:contact@tecnotrends.com" className="text-blue-600 hover:underline">contact@tecnotrends.com</a>
+                Should you have any feedback, comments, requests for technical support or other inquiries, please contact us by email: <a href="mailto:faisal.hassan.0996@gmail.com" className="text-blue-600 hover:underline">faisal.hassan.0996@gmail.com</a>
               </p>
             </section>
           </div>

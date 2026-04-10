@@ -37,7 +37,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <h3 className="text-xs font-bold uppercase tracking-widest text-gray-900 mb-1">Email Us</h3>
-                    <p className="text-gray-500 font-light">hello@tecnotrends.com</p>
+                    <p className="text-gray-500 font-light">faisal.hassan.0996@gmail.com</p>
                   </div>
                 </div>
 
