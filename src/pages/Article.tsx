@@ -72,7 +72,11 @@ export default function Article() {
     const foundPost = allPosts.find(p => p.slug === slug);
     if (foundPost) {
       setPost(foundPost);
-      setRelatedPosts(allPosts.filter(p => p.category === foundPost.category && p.id !== foundPost.id).slice(0, 3));
+      const related = allPosts
+        .filter(p => p.category === foundPost.category && p.id !== foundPost.id)
+        .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+        .slice(0, 3);
+      setRelatedPosts(related);
     }
   }, [slug]);
 
