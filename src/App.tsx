@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import { HelmetProvider } from 'react-helmet-async';
 import Home from './pages/Home';
 import Article from './pages/Article';
 import CreatePost from './pages/CreatePost';
@@ -19,20 +20,22 @@ function ScrollToTop() {
 
 export default function App() {
   return (
-    <Router>
-      <ScrollToTop />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/article/:slug" element={<Article />} />
-        <Route path="/admin" element={<AdminDashboard />} />
-        <Route path="/admin/create" element={<CreatePost />} />
-        <Route path="/admin/monetization" element={<MonetizationMap />} />
-        <Route path="/excel-tips" element={<ExcelTips />} />
-        <Route path="/sql-tips" element={<SQLTips />} />
-        <Route path="/agentic-ai" element={<AgenticAI />} />
-        {/* Fallback to home for demo purposes */}
-        <Route path="*" element={<Home />} />
-      </Routes>
-    </Router>
+    <HelmetProvider>
+      <Router>
+        <ScrollToTop />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/article/:slug" element={<Article />} />
+          <Route path="/admin" element={<AdminDashboard />} />
+          <Route path="/admin/create" element={<CreatePost />} />
+          <Route path="/admin/monetization" element={<MonetizationMap />} />
+          <Route path="/excel-tips" element={<ExcelTips />} />
+          <Route path="/sql-tips" element={<SQLTips />} />
+          <Route path="/agentic-ai" element={<AgenticAI />} />
+          {/* Fallback to home for demo purposes */}
+          <Route path="*" element={<Home />} />
+        </Routes>
+      </Router>
+    </HelmetProvider>
   );
 }

@@ -10,6 +10,7 @@ import { GADGET_REVIEWS } from '../data/gadgetReviews';
 import { Post } from '../types';
 import { Link } from 'react-router-dom';
 import { motion } from 'motion/react';
+import { Helmet } from 'react-helmet-async';
 import { ArrowRight, Clock } from 'lucide-react';
 
 export default function Home() {
@@ -30,6 +31,10 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-white font-sans text-gray-900">
+      <Helmet>
+        <title>TECNO TRENDS | Minimalist Tech Insights</title>
+        <meta name="description" content="Curating the future of technology through a minimalistic lens. Simple, focused, and insightful tech reviews and guides." />
+      </Helmet>
       <Navbar />
       
       <main className="pt-32">

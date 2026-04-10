@@ -2,6 +2,7 @@ import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import ReactMarkdown from 'react-markdown';
 import { motion, useScroll, useSpring } from 'motion/react';
+import { Helmet } from 'react-helmet-async';
 import { 
   Calendar, 
   Clock, 
@@ -79,6 +80,25 @@ export default function Article() {
 
   return (
     <div className="min-h-screen bg-white font-sans text-gray-900">
+      <Helmet>
+        <title>{post.title} | TECNO TRENDS</title>
+        <meta name="description" content={post.excerpt} />
+        
+        {/* Open Graph / Facebook */}
+        <meta property="og:type" content="article" />
+        <meta property="og:url" content={window.location.href} />
+        <meta property="og:title" content={post.title} />
+        <meta property="og:description" content={post.excerpt} />
+        <meta property="og:image" content={post.image} />
+
+        {/* Twitter */}
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content={window.location.href} />
+        <meta property="twitter:title" content={post.title} />
+        <meta property="twitter:description" content={post.excerpt} />
+        <meta property="twitter:image" content={post.image} />
+      </Helmet>
+
       <Navbar />
       
       {/* Reading Progress Bar */}

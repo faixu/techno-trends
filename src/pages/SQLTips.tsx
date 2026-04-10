@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import { ArrowRight, Clock, User, Calendar, Database, Search } from 'lucide-react';
 import { Navbar } from '../components/layout/Navbar';
 import { Footer } from '../components/layout/Footer';
@@ -27,6 +28,10 @@ export default function SQLTips() {
 
   return (
     <div className="min-h-screen bg-white">
+      <Helmet>
+        <title>SQL Mastery Hub | TECNO TRENDS</title>
+        <meta name="description" content="Master the language of data. From basic SELECT statements to advanced window functions and performance tuning." />
+      </Helmet>
       <Navbar />
       
       <main className="pt-32 pb-20">

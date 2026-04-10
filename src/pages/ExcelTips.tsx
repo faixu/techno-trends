@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import { ArrowRight, Clock, User, Calendar, Table, Search } from 'lucide-react';
 import { Navbar } from '../components/layout/Navbar';
 import { Footer } from '../components/layout/Footer';
@@ -27,6 +28,10 @@ export default function ExcelTips() {
 
   return (
     <div className="min-h-screen bg-white">
+      <Helmet>
+        <title>Excel Mastery Hub | TECNO TRENDS</title>
+        <meta name="description" content="Unlock the full potential of Microsoft Excel with our comprehensive collection of tips, formulas, and advanced techniques." />
+      </Helmet>
       <Navbar />
       
       <main className="pt-32 pb-20">
