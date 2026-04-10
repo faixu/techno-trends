@@ -83,6 +83,7 @@ export default function Article() {
       <Helmet>
         <title>{post.title} | TECNO TRENDS</title>
         <meta name="description" content={post.excerpt} />
+        <link rel="canonical" href={window.location.href} />
         
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="article" />
@@ -90,6 +91,9 @@ export default function Article() {
         <meta property="og:title" content={post.title} />
         <meta property="og:description" content={post.excerpt} />
         <meta property="og:image" content={post.image} />
+        <meta property="og:site_name" content="TECNO TRENDS" />
+        <meta property="article:published_time" content={post.date} />
+        <meta property="article:author" content={post.author.name} />
 
         {/* Twitter */}
         <meta property="twitter:card" content="summary_large_image" />
