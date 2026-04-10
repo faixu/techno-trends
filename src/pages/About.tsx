@@ -36,20 +36,27 @@ export default function About() {
 
             <div className="prose prose-gray max-w-none font-light leading-relaxed text-gray-600 space-y-8">
               <p className="text-xl text-gray-900">
-                TECNO TRENDS was founded on a simple principle: technology should be understood, not just consumed. In a world of constant noise and rapid iterations, we provide a space for focused, insightful, and minimalistic tech analysis.
+                TECNO TRENDS was founded in 2026 by Faisal Hassan, a technology enthusiast and software engineer with a vision to simplify the complex digital world. We provide a space for focused, insightful, and minimalistic tech analysis.
               </p>
               
               <section className="space-y-4">
                 <h2 className="text-xl font-bold text-gray-900 uppercase tracking-widest">Our Mission</h2>
                 <p>
-                  Our mission is to bridge the gap between complex technical advancements and everyday utility. We strip away the jargon and the hype to deliver content that matters—whether it's mastering a new software tool, understanding the implications of AI, or choosing the right gadget for your lifestyle.
+                  Our mission is to bridge the gap between complex technical advancements and everyday utility. We strip away the jargon and the hype to deliver content that matters—whether it's mastering a new software tool, understanding the implications of AI, or choosing the right gadget for your lifestyle. We believe that technology should empower people, not overwhelm them.
+                </p>
+              </section>
+
+              <section className="space-y-4">
+                <h2 className="text-xl font-bold text-gray-900 uppercase tracking-widest">Our Expertise</h2>
+                <p>
+                  With a background in data engineering and software development, our team brings a unique perspective to tech journalism. We don't just report on trends; we dive deep into the code, the data structures, and the hardware to understand the "why" behind the "what." Our guides on Excel Mastery and SQL are designed to turn beginners into power users through practical, real-world examples.
                 </p>
               </section>
 
               <section className="space-y-4">
                 <h2 className="text-xl font-bold text-gray-900 uppercase tracking-widest">Why Minimalism?</h2>
                 <p>
-                  We believe that clarity is the ultimate sophistication. Our design and our content reflect this philosophy. By removing distractions, we allow the core ideas and insights to shine through, providing a better reading and learning experience for our community.
+                  We believe that clarity is the ultimate sophistication. Our design and our content reflect this philosophy. By removing distractions, we allow the core ideas and insights to shine through, providing a better reading and learning experience for our community. In an age of information overload, we curate only what is truly valuable.
                 </p>
               </section>
 

@@ -14,6 +14,7 @@ import TermsOfService from './pages/TermsOfService';
 import About from './pages/About';
 import Contact from './pages/Contact';
 import Disclaimer from './pages/Disclaimer';
+import Category from './pages/Category';
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -42,6 +43,7 @@ export default function App() {
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/disclaimer" element={<Disclaimer />} />
+          <Route path="/category/:id" element={<Category />} />
           {/* Fallback to home for demo purposes */}
           <Route path="*" element={<Home />} />
         </Routes>

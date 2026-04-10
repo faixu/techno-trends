@@ -29,10 +29,15 @@ export function Footer() {
           <div className="md:col-span-2 space-y-6">
             <h4 className="text-[10px] font-bold uppercase tracking-widest text-gray-900">Explore</h4>
             <ul className="space-y-4">
-              {['Excel', 'SQL', 'AI', 'Gadgets'].map((item) => (
-                <li key={item}>
-                  <Link to={`/category/${item.toLowerCase()}`} className="text-sm text-gray-400 hover:text-gray-900 transition-colors">
-                    {item}
+              {[
+                { name: 'Excel', path: '/excel-tips' },
+                { name: 'SQL', path: '/sql-tips' },
+                { name: 'AI', path: '/agentic-ai' },
+                { name: 'Gadgets', path: '/category/gadgets-&-reviews' }
+              ].map((item) => (
+                <li key={item.name}>
+                  <Link to={item.path} className="text-sm text-gray-400 hover:text-gray-900 transition-colors">
+                    {item.name}
                   </Link>
                 </li>
               ))}

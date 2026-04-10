@@ -10,7 +10,9 @@ import {
   Twitter,
   Linkedin,
   Link as LinkIcon,
-  MessageSquare
+  MessageSquare,
+  Copy,
+  Check
 } from 'lucide-react';
 import { Navbar } from '../components/layout/Navbar';
 import { Footer } from '../components/layout/Footer';
@@ -23,6 +25,42 @@ import { AGENTIC_AI_POSTS } from '../data/agenticAiPosts';
 import { OFFLINE_APPS_POST } from '../data/offlineAppsPost';
 import { GADGET_REVIEWS } from '../data/gadgetReviews';
 import { Post } from '../types';
+
+function CodeBlock({ children, className }: { children: any, className?: string }) {
+  const [copied, setCopied] = React.useState(false);
+  const code = String(children).replace(/\n$/, '');
+  const language = className?.replace('language-', '') || 'text';
+
+  const copyToClipboard = () => {
+    navigator.clipboard.writeText(code);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
+
+  return (
+    <div className="relative group my-8">
+      <div className="absolute right-4 top-4 opacity-0 group-hover:opacity-100 transition-opacity">
+        <button
+          onClick={copyToClipboard}
+          className="p-2 bg-white/10 hover:bg-white/20 rounded-md backdrop-blur-sm transition-colors text-white"
+          title="Copy code"
+        >
+          {copied ? <Check className="w-4 h-4 text-green-400" /> : <Copy className="w-4 h-4" />}
+        </button>
+      </div>
+      <div className="bg-gray-900 rounded-lg overflow-hidden">
+        <div className="flex items-center justify-between px-4 py-2 bg-gray-800/50 border-b border-white/5">
+          <span className="text-[10px] font-bold uppercase tracking-widest text-gray-400">{language}</span>
+        </div>
+        <pre className="p-6 overflow-x-auto">
+          <code className="text-sm font-mono text-gray-300 leading-relaxed">
+            {code}
+          </code>
+        </pre>
+      </div>
+    </div>
+  );
+}
 
 export default function Article() {
   const { slug } = useParams<{ slug: string }>();
@@ -155,13 +193,41 @@ export default function Article() {
                 />
               </div>
 
-              <div className="prose prose-lg prose-gray max-w-none">
-                <div className="markdown-body font-light leading-relaxed text-gray-500 space-y-12">
-                  <ReactMarkdown>{post.content.split('\n\n').slice(0, 2).join('\n\n')}</ReactMarkdown>
+              <div className="prose prose-xl prose-gray max-w-none">
+                <div className="markdown-body font-light leading-relaxed text-gray-600 space-y-12">
+                  <ReactMarkdown
+                    components={{
+                      code({ node, inline, className, children, ...props }: any) {
+                        return !inline ? (
+                          <CodeBlock className={className}>{children}</CodeBlock>
+                        ) : (
+                          <code className="bg-gray-100 text-blue-600 px-1.5 py-0.5 rounded text-sm font-mono" {...props}>
+                            {children}
+                          </code>
+                        );
+                      }
+                    }}
+                  >
+                    {post.content.split('\n\n').slice(0, 2).join('\n\n')}
+                  </ReactMarkdown>
                   
                   <InArticleAd />
                   
-                  <ReactMarkdown>{post.content.split('\n\n').slice(2).join('\n\n')}</ReactMarkdown>
+                  <ReactMarkdown
+                    components={{
+                      code({ node, inline, className, children, ...props }: any) {
+                        return !inline ? (
+                          <CodeBlock className={className}>{children}</CodeBlock>
+                        ) : (
+                          <code className="bg-gray-100 text-blue-600 px-1.5 py-0.5 rounded text-sm font-mono" {...props}>
+                            {children}
+                          </code>
+                        );
+                      }
+                    }}
+                  >
+                    {post.content.split('\n\n').slice(2).join('\n\n')}
+                  </ReactMarkdown>
                 </div>
               </div>
 

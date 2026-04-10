@@ -52,21 +52,34 @@ export default function PrivacyPolicy() {
             </section>
 
             <section className="space-y-4">
-              <h2 className="text-xl font-bold text-gray-900 uppercase tracking-widest">4. Cookies</h2>
+              <h2 className="text-xl font-bold text-gray-900 uppercase tracking-widest">4. Cookies and Web Beacons</h2>
               <p>
-                You can set your browser to refuse all or some browser cookies, or to alert you when websites set or access cookies. If you disable or refuse cookies, please note that some parts of this website may become inaccessible or not function properly.
+                TECNO TRENDS uses 'cookies'. These cookies are used to store information including visitors' preferences, and the pages on the website that the visitor accessed or visited. The information is used to optimize the users' experience by customizing our web page content based on visitors' browser type and/or other information.
+              </p>
+              <p>
+                <strong>Google DoubleClick DART Cookie:</strong> Google is one of a third-party vendor on our site. It also uses cookies, known as DART cookies, to serve ads to our site visitors based upon their visit to www.website.com and other sites on the internet. However, visitors may choose to decline the use of DART cookies by visiting the Google ad and content network Privacy Policy at the following URL – <a href="https://policies.google.com/technologies/ads" className="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">https://policies.google.com/technologies/ads</a>
               </p>
             </section>
 
             <section className="space-y-4">
-              <h2 className="text-xl font-bold text-gray-900 uppercase tracking-widest">5. Third-Party Links</h2>
+              <h2 className="text-xl font-bold text-gray-900 uppercase tracking-widest">5. Advertising Partners Privacy Policies</h2>
+              <p>
+                Third-party ad servers or ad networks uses technologies like cookies, JavaScript, or Web Beacons that are used in their respective advertisements and links that appear on TECNO TRENDS, which are sent directly to users' browser. They automatically receive your IP address when this occurs. These technologies are used to measure the effectiveness of their advertising campaigns and/or to personalize the advertising content that you see on websites that you visit.
+              </p>
+              <p>
+                Note that TECNO TRENDS has no access to or control over these cookies that are used by third-party advertisers.
+              </p>
+            </section>
+
+            <section className="space-y-4">
+              <h2 className="text-xl font-bold text-gray-900 uppercase tracking-widest">6. Third-Party Links</h2>
               <p>
                 This website may include links to third-party websites, plug-ins and applications. Clicking on those links or enabling those connections may allow third parties to collect or share data about you. We do not control these third-party websites and are not responsible for their privacy statements.
               </p>
             </section>
 
             <section className="space-y-4">
-              <h2 className="text-xl font-bold text-gray-900 uppercase tracking-widest">6. Contact Us</h2>
+              <h2 className="text-xl font-bold text-gray-900 uppercase tracking-widest">7. Contact Us</h2>
               <p>
                 If you have any questions about this privacy policy or our privacy practices, please contact us at: <a href="mailto:faisal.hassan.0996@gmail.com" className="text-blue-600 hover:underline">faisal.hassan.0996@gmail.com</a>
               </p>
