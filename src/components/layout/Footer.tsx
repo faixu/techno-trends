@@ -67,6 +67,7 @@ export function Footer() {
           <div className="flex space-x-8">
             <Link to="/privacy" className="hover:text-gray-900 transition-colors">Privacy</Link>
             <Link to="/terms" className="hover:text-gray-900 transition-colors">Terms</Link>
+            <Link to="/disclaimer" className="hover:text-gray-900 transition-colors">Disclaimer</Link>
             <Link to="/sitemap.xml" className="hover:text-gray-900 transition-colors">Sitemap</Link>
             <Link to="/admin" className="hover:text-gray-900 transition-colors opacity-0 hover:opacity-100 transition-opacity">Admin</Link>
           </div>
