@@ -30,7 +30,7 @@ export default function Home() {
   const remainingPosts = allPosts.slice(1);
 
   return (
-    <div className="min-h-screen bg-white font-sans text-gray-900">
+    <div className="min-h-screen bg-white dark:bg-gray-950 font-sans text-gray-900 dark:text-gray-100 transition-colors duration-300">
       <Helmet>
         <title>TECNO TRENDS | Minimalist Tech Insights</title>
         <meta name="description" content="Curating the future of technology through a minimalistic lens. Simple, focused, and insightful tech reviews and guides." />
@@ -49,24 +49,24 @@ export default function Home() {
             <div className="lg:col-span-7 space-y-8">
               <Link 
                 to={`/category/${featuredPost.category.toLowerCase()}`}
-                className="text-xs font-bold uppercase tracking-[0.2em] text-blue-600"
+                className="text-xs font-bold uppercase tracking-[0.2em] text-blue-600 dark:text-blue-400"
               >
                 {featuredPost.category}
               </Link>
-              <h1 className="text-5xl lg:text-7xl font-light leading-tight tracking-tight">
+              <h1 className="text-5xl lg:text-7xl font-light leading-tight tracking-tight text-gray-900 dark:text-gray-100">
                 {featuredPost.title}
               </h1>
-              <p className="text-xl text-gray-500 leading-relaxed max-w-2xl">
+              <p className="text-xl text-gray-500 dark:text-gray-400 leading-relaxed max-w-2xl">
                 {featuredPost.excerpt}
               </p>
               <div className="flex flex-col sm:flex-row items-center gap-8 pt-4">
                 <Link 
                   to={`/article/${featuredPost.slug}`}
-                  className="bg-gray-900 text-white px-10 py-5 rounded-sm text-[10px] font-bold uppercase tracking-[0.2em] hover:bg-blue-600 transition-all duration-300 shadow-xl"
+                  className="bg-gray-900 dark:bg-gray-100 text-white dark:text-gray-900 px-10 py-5 rounded-sm text-[10px] font-bold uppercase tracking-[0.2em] hover:bg-blue-600 dark:hover:bg-blue-500 transition-all duration-300 shadow-xl"
                 >
                   Read Full Story
                 </Link>
-                <div className="flex items-center space-x-4 text-[10px] font-bold uppercase tracking-widest text-gray-400">
+                <div className="flex items-center space-x-4 text-[10px] font-bold uppercase tracking-widest text-gray-400 dark:text-gray-500">
                   <span className="flex items-center"><Clock className="w-3 h-3 mr-2" /> {featuredPost.readTime}</span>
                   <span>•</span>
                   <span>{featuredPost.date}</span>
@@ -74,7 +74,7 @@ export default function Home() {
               </div>
             </div>
             <div className="lg:col-span-5">
-              <div className="aspect-[4/5] overflow-hidden bg-gray-100 rounded-sm">
+              <div className="aspect-[4/5] overflow-hidden bg-gray-100 dark:bg-gray-900 rounded-sm">
                 <img 
                   src={featuredPost.image} 
                   alt={featuredPost.title}
@@ -98,7 +98,7 @@ export default function Home() {
                 transition={{ delay: (index % 3) * 0.1 }}
                 className="space-y-6"
               >
-                <Link to={`/article/${post.slug}`} className="block aspect-[16/10] overflow-hidden bg-gray-100 rounded-sm">
+                <Link to={`/article/${post.slug}`} className="block aspect-[16/10] overflow-hidden bg-gray-100 dark:bg-gray-900 rounded-sm">
                   <img 
                     src={post.image} 
                     alt={post.title}
@@ -108,18 +108,18 @@ export default function Home() {
                 </Link>
                 <div className="space-y-4">
                   <div className="flex items-center justify-between">
-                    <span className="text-[10px] font-bold uppercase tracking-widest text-gray-400">
+                    <span className="text-[10px] font-bold uppercase tracking-widest text-gray-400 dark:text-gray-500">
                       {post.category}
                     </span>
-                    <span className="text-[10px] text-gray-400 flex items-center uppercase tracking-widest">
+                    <span className="text-[10px] text-gray-400 dark:text-gray-500 flex items-center uppercase tracking-widest">
                       <Clock className="w-3 h-3 mr-1" />
                       {post.readTime}
                     </span>
                   </div>
-                  <h3 className="text-2xl font-light leading-snug tracking-tight hover:text-blue-600 transition-colors">
+                  <h3 className="text-2xl font-light leading-snug tracking-tight text-gray-900 dark:text-gray-100 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
                     <Link to={`/article/${post.slug}`}>{post.title}</Link>
                   </h3>
-                  <p className="text-gray-500 text-sm leading-relaxed line-clamp-2">
+                  <p className="text-gray-500 dark:text-gray-400 text-sm leading-relaxed line-clamp-2">
                     {post.excerpt}
                   </p>
                 </div>
@@ -129,16 +129,16 @@ export default function Home() {
         </section>
 
         {/* Simple Newsletter */}
-        <section className="border-t border-gray-100 py-32">
+        <section className="border-t border-gray-100 dark:border-gray-800 py-32">
           <div className="max-w-3xl mx-auto px-4 text-center space-y-8">
-            <h2 className="text-4xl font-light tracking-tight">Stay updated with our weekly digest.</h2>
+            <h2 className="text-4xl font-light tracking-tight text-gray-900 dark:text-gray-100">Stay updated with our weekly digest.</h2>
             <form className="flex flex-col sm:flex-row gap-4">
               <input 
                 type="email" 
                 placeholder="Email address"
-                className="flex-1 bg-gray-50 border-none px-6 py-4 rounded-sm focus:ring-1 focus:ring-gray-200 transition-all"
+                className="flex-1 bg-gray-50 dark:bg-gray-900 border-none px-6 py-4 rounded-sm focus:ring-1 focus:ring-gray-200 dark:focus:ring-gray-700 transition-all text-gray-900 dark:text-gray-100"
               />
-              <button className="bg-gray-900 text-white px-12 py-4 rounded-sm font-bold text-sm uppercase tracking-widest hover:bg-gray-800 transition-all">
+              <button className="bg-gray-900 dark:bg-gray-100 text-white dark:text-gray-900 px-12 py-4 rounded-sm font-bold text-sm uppercase tracking-widest hover:bg-gray-800 dark:hover:bg-gray-200 transition-all">
                 Subscribe
               </button>
             </form>

@@ -121,7 +121,7 @@ export default function Article() {
   if (!post) return null;
 
   return (
-    <div className="min-h-screen bg-white font-sans text-gray-900">
+    <div className="min-h-screen bg-white dark:bg-gray-950 font-sans text-gray-900 dark:text-gray-100 transition-colors duration-300">
       <Helmet>
         <title>{post.title} | TECNO TRENDS</title>
         <meta name="description" content={post.excerpt} />
@@ -161,30 +161,30 @@ export default function Article() {
               <header className="mb-16 space-y-8">
                 <Link 
                   to={`/category/${post.category.toLowerCase()}`}
-                  className="text-[10px] font-bold uppercase tracking-[0.2em] text-blue-600"
+                  className="text-[10px] font-bold uppercase tracking-[0.2em] text-blue-600 dark:text-blue-400"
                 >
                   {post.category}
                 </Link>
-                <h1 className="text-5xl lg:text-7xl font-light leading-tight tracking-tight text-gray-900">
+                <h1 className="text-5xl lg:text-7xl font-light leading-tight tracking-tight text-gray-900 dark:text-gray-100">
                   {post.title}
                 </h1>
                 
-                <div className="flex items-center justify-between py-10 border-y border-gray-100">
+                <div className="flex items-center justify-between py-10 border-y border-gray-100 dark:border-gray-800">
                   <div className="flex items-center space-x-4">
                     <img src={post.author.avatar} className="w-10 h-10 rounded-full grayscale" alt={post.author.name} />
                     <div>
-                      <p className="text-xs font-bold text-gray-900 uppercase tracking-widest">{post.author.name}</p>
-                      <p className="text-[10px] text-gray-400 uppercase tracking-widest mt-1">{post.author.role}</p>
+                      <p className="text-xs font-bold text-gray-900 dark:text-gray-100 uppercase tracking-widest">{post.author.name}</p>
+                      <p className="text-[10px] text-gray-400 dark:text-gray-500 uppercase tracking-widest mt-1">{post.author.role}</p>
                     </div>
                   </div>
-                  <div className="flex items-center space-x-8 text-[10px] font-bold uppercase tracking-widest text-gray-400">
+                  <div className="flex items-center space-x-8 text-[10px] font-bold uppercase tracking-widest text-gray-400 dark:text-gray-500">
                     <span className="flex items-center"><Calendar className="w-3 h-3 mr-2" /> {post.date}</span>
                     <span className="flex items-center"><Clock className="w-3 h-3 mr-2" /> {post.readTime}</span>
                   </div>
                 </div>
               </header>
 
-              <div className="aspect-video rounded-sm overflow-hidden bg-gray-100 mb-16">
+              <div className="aspect-video rounded-sm overflow-hidden bg-gray-100 dark:bg-gray-900 mb-16">
                 <img 
                   src={post.image} 
                   alt={post.title}
@@ -193,15 +193,15 @@ export default function Article() {
                 />
               </div>
 
-              <div className="prose prose-xl prose-gray max-w-none">
-                <div className="markdown-body font-light leading-relaxed text-gray-600 space-y-12">
+              <div className="prose prose-xl prose-gray dark:prose-invert max-w-none">
+                <div className="markdown-body font-light leading-relaxed text-gray-600 dark:text-gray-400 space-y-12">
                   <ReactMarkdown
                     components={{
                       code({ node, inline, className, children, ...props }: any) {
                         return !inline ? (
                           <CodeBlock className={className}>{children}</CodeBlock>
                         ) : (
-                          <code className="bg-gray-100 text-blue-600 px-1.5 py-0.5 rounded text-sm font-mono" {...props}>
+                          <code className="bg-gray-100 dark:bg-gray-800 text-blue-600 dark:text-blue-400 px-1.5 py-0.5 rounded text-sm font-mono" {...props}>
                             {children}
                           </code>
                         );
@@ -219,7 +219,7 @@ export default function Article() {
                         return !inline ? (
                           <CodeBlock className={className}>{children}</CodeBlock>
                         ) : (
-                          <code className="bg-gray-100 text-blue-600 px-1.5 py-0.5 rounded text-sm font-mono" {...props}>
+                          <code className="bg-gray-100 dark:bg-gray-800 text-blue-600 dark:text-blue-400 px-1.5 py-0.5 rounded text-sm font-mono" {...props}>
                             {children}
                           </code>
                         );
@@ -234,11 +234,11 @@ export default function Article() {
               <AffiliateWidget />
 
               {/* Comments Section */}
-              <section className="mt-32 pt-24 border-t border-gray-100">
-                <h3 className="text-3xl font-light tracking-tight mb-12">Comments</h3>
-                <div className="bg-gray-50 rounded-sm p-16 text-center space-y-6">
-                  <MessageSquare className="w-8 h-8 mx-auto text-gray-200" />
-                  <p className="text-gray-400 text-sm font-light italic tracking-wide">Comments are currently being moderated. Join the discussion soon.</p>
+              <section className="mt-32 pt-24 border-t border-gray-100 dark:border-gray-800">
+                <h3 className="text-3xl font-light tracking-tight mb-12 text-gray-900 dark:text-gray-100">Comments</h3>
+                <div className="bg-gray-50 dark:bg-gray-900 rounded-sm p-16 text-center space-y-6">
+                  <MessageSquare className="w-8 h-8 mx-auto text-gray-200 dark:text-gray-700" />
+                  <p className="text-gray-400 dark:text-gray-500 text-sm font-light italic tracking-wide">Comments are currently being moderated. Join the discussion soon.</p>
                 </div>
               </section>
             </article>
@@ -248,17 +248,17 @@ export default function Article() {
               <SidebarAd />
               
               <div className="space-y-8">
-                <h3 className="text-[10px] font-bold uppercase tracking-widest text-gray-900 border-b border-gray-100 pb-4">Share</h3>
+                <h3 className="text-[10px] font-bold uppercase tracking-widest text-gray-900 dark:text-gray-100 border-b border-gray-100 dark:border-gray-800 pb-4">Share</h3>
                 <div className="flex flex-col gap-6">
-                  <button onClick={() => handleShare('copy')} className="flex items-center space-x-3 text-[10px] font-bold uppercase tracking-widest text-gray-400 hover:text-gray-900 transition-colors group">
+                  <button onClick={() => handleShare('copy')} className="flex items-center space-x-3 text-[10px] font-bold uppercase tracking-widest text-gray-400 dark:text-gray-500 hover:text-gray-900 dark:hover:text-gray-100 transition-colors group">
                     <LinkIcon className="w-4 h-4 group-hover:text-blue-600 transition-colors" />
                     <span>{copied ? 'Copied to clipboard' : 'Copy Link'}</span>
                   </button>
-                  <button onClick={() => handleShare('twitter')} className="flex items-center space-x-3 text-[10px] font-bold uppercase tracking-widest text-gray-400 hover:text-gray-900 transition-colors group">
+                  <button onClick={() => handleShare('twitter')} className="flex items-center space-x-3 text-[10px] font-bold uppercase tracking-widest text-gray-400 dark:text-gray-500 hover:text-gray-900 dark:hover:text-gray-100 transition-colors group">
                     <Twitter className="w-4 h-4 group-hover:text-blue-400 transition-colors" />
                     <span>Twitter</span>
                   </button>
-                  <button onClick={() => handleShare('linkedin')} className="flex items-center space-x-3 text-[10px] font-bold uppercase tracking-widest text-gray-400 hover:text-gray-900 transition-colors group">
+                  <button onClick={() => handleShare('linkedin')} className="flex items-center space-x-3 text-[10px] font-bold uppercase tracking-widest text-gray-400 dark:text-gray-500 hover:text-gray-900 dark:hover:text-gray-100 transition-colors group">
                     <Linkedin className="w-4 h-4 group-hover:text-blue-700 transition-colors" />
                     <span>LinkedIn</span>
                   </button>
@@ -266,14 +266,14 @@ export default function Article() {
               </div>
 
               <div className="space-y-12">
-                <h3 className="text-[10px] font-bold uppercase tracking-widest text-gray-900 border-b border-gray-100 pb-4">Related Posts</h3>
+                <h3 className="text-[10px] font-bold uppercase tracking-widest text-gray-900 dark:text-gray-100 border-b border-gray-100 dark:border-gray-800 pb-4">Related Posts</h3>
                 <div className="space-y-12">
                   {relatedPosts.map(related => (
                     <Link key={related.id} to={`/article/${related.slug}`} className="group block space-y-4">
-                      <div className="aspect-[16/10] rounded-sm overflow-hidden bg-gray-100">
+                      <div className="aspect-[16/10] rounded-sm overflow-hidden bg-gray-100 dark:bg-gray-900">
                         <img src={related.image} className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" alt={related.title} referrerPolicy="no-referrer" />
                       </div>
-                      <h4 className="text-lg font-light leading-snug tracking-tight group-hover:text-blue-600 transition-colors">{related.title}</h4>
+                      <h4 className="text-lg font-light leading-snug tracking-tight text-gray-900 dark:text-gray-100 group-hover:text-blue-600 dark:hover:text-blue-400 transition-colors">{related.title}</h4>
                     </Link>
                   ))}
                 </div>

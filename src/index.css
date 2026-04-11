@@ -3,11 +3,36 @@
 
 @theme {
   --font-sans: "Plus Jakarta Sans", "Inter", ui-sans-serif, system-ui, sans-serif;
+  
+  --color-background: white;
+  --color-foreground: #111827; /* gray-900 */
+  --color-muted: #6b7280; /* gray-500 */
+  --color-border: #f3f4f6; /* gray-100 */
 }
 
 @layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --border: 214.3 31.8% 91.4%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --border: 217.2 32.6% 17.5%;
+  }
+
   body {
-    @apply font-sans text-gray-900 antialiased;
+    @apply font-sans antialiased bg-white text-gray-900 transition-colors duration-300;
+  }
+
+  .dark body {
+    @apply bg-gray-950 text-gray-100;
   }
 }
 

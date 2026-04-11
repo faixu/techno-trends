@@ -41,7 +41,7 @@ export default function Category() {
   }, [id]);
 
   return (
-    <div className="min-h-screen bg-white font-sans text-gray-900">
+    <div className="min-h-screen bg-white dark:bg-gray-950 font-sans text-gray-900 dark:text-gray-100 transition-colors duration-300">
       <Helmet>
         <title>{categoryName} | TECNO TRENDS</title>
         <meta name="description" content={`Explore the latest insights and guides in ${categoryName} on TECNO TRENDS.`} />
@@ -51,8 +51,8 @@ export default function Category() {
       <main className="pt-32 pb-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <header className="mb-20 text-center space-y-4">
-            <h1 className="text-5xl lg:text-7xl font-light tracking-tight text-gray-900">{categoryName}</h1>
-            <p className="text-gray-400 text-sm uppercase tracking-[0.3em] font-bold">Category Archive</p>
+            <h1 className="text-5xl lg:text-7xl font-light tracking-tight text-gray-900 dark:text-gray-100">{categoryName}</h1>
+            <p className="text-gray-400 dark:text-gray-500 text-sm uppercase tracking-[0.3em] font-bold">Category Archive</p>
           </header>
 
           {posts.length > 0 ? (
@@ -66,7 +66,7 @@ export default function Category() {
                   transition={{ delay: (index % 3) * 0.1 }}
                   className="space-y-6"
                 >
-                  <Link to={`/article/${post.slug}`} className="block aspect-[16/10] overflow-hidden bg-gray-100 rounded-sm">
+                  <Link to={`/article/${post.slug}`} className="block aspect-[16/10] overflow-hidden bg-gray-100 dark:bg-gray-900 rounded-sm">
                     <img 
                       src={post.image} 
                       alt={post.title}
@@ -76,18 +76,18 @@ export default function Category() {
                   </Link>
                   <div className="space-y-4">
                     <div className="flex items-center justify-between">
-                      <span className="text-[10px] font-bold uppercase tracking-widest text-gray-400">
+                      <span className="text-[10px] font-bold uppercase tracking-widest text-gray-400 dark:text-gray-500">
                         {post.category}
                       </span>
-                      <span className="text-[10px] text-gray-400 flex items-center uppercase tracking-widest">
+                      <span className="text-[10px] text-gray-400 dark:text-gray-500 flex items-center uppercase tracking-widest">
                         <Clock className="w-3 h-3 mr-1" />
                         {post.readTime}
                       </span>
                     </div>
-                    <h3 className="text-2xl font-light leading-snug tracking-tight hover:text-blue-600 transition-colors">
+                    <h3 className="text-2xl font-light leading-snug tracking-tight text-gray-900 dark:text-gray-100 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
                       <Link to={`/article/${post.slug}`}>{post.title}</Link>
                     </h3>
-                    <p className="text-gray-500 text-sm leading-relaxed line-clamp-2">
+                    <p className="text-gray-500 dark:text-gray-400 text-sm leading-relaxed line-clamp-2">
                       {post.excerpt}
                     </p>
                   </div>
@@ -96,8 +96,8 @@ export default function Category() {
             </div>
           ) : (
             <div className="text-center py-32 space-y-6">
-              <p className="text-gray-400 font-light italic">No posts found in this category yet.</p>
-              <Link to="/" className="inline-block text-[10px] font-bold uppercase tracking-widest text-blue-600 hover:text-gray-900 transition-colors">
+              <p className="text-gray-400 dark:text-gray-500 font-light italic">No posts found in this category yet.</p>
+              <Link to="/" className="inline-block text-[10px] font-bold uppercase tracking-widest text-blue-600 dark:text-blue-400 hover:text-gray-900 dark:hover:text-gray-100 transition-colors">
                 Return Home
               </Link>
             </div>

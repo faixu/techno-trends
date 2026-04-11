@@ -26,21 +26,21 @@ export default function AgenticAI() {
   );
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white dark:bg-gray-950 transition-colors duration-300">
       <Navbar />
       
       <main className="pt-32 pb-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Header */}
           <div className="text-center mb-16 space-y-6">
-            <div className="inline-flex items-center space-x-2 bg-indigo-50 text-indigo-600 px-4 py-1.5 rounded-full text-sm font-bold uppercase tracking-wider">
+            <div className="inline-flex items-center space-x-2 bg-indigo-50 dark:bg-indigo-900/20 text-indigo-600 dark:text-indigo-400 px-4 py-1.5 rounded-full text-sm font-bold uppercase tracking-wider">
               <Cpu className="w-4 h-4" />
               <span>Deep Dive into Autonomy</span>
             </div>
-            <h1 className="text-5xl lg:text-6xl font-extrabold text-gray-900 leading-tight">
-              Agentic AI <span className="text-indigo-600">Mastery</span>
+            <h1 className="text-5xl lg:text-6xl font-extrabold text-gray-900 dark:text-gray-100 leading-tight">
+              Agentic AI <span className="text-indigo-600 dark:text-indigo-400">Mastery</span>
             </h1>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            <p className="text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
               Explore the next frontier of artificial intelligence. From autonomous workflows to multi-agent orchestration, master the future of tech.
             </p>
             
@@ -52,7 +52,7 @@ export default function AgenticAI() {
                 placeholder="Search for an Agentic AI topic (e.g., LangGraph, Autonomy)..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full bg-gray-50 border border-gray-100 rounded-2xl py-4 pl-12 pr-6 focus:outline-none focus:ring-2 focus:ring-indigo-600 transition-all"
+                className="w-full bg-gray-50 dark:bg-gray-900 border border-gray-100 dark:border-gray-800 rounded-2xl py-4 pl-12 pr-6 focus:outline-none focus:ring-2 focus:ring-indigo-600 transition-all text-gray-900 dark:text-gray-100"
               />
             </div>
           </div>
@@ -66,7 +66,7 @@ export default function AgenticAI() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: (index % 6) * 0.05 }}
-                className="group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all border border-gray-100"
+                className="group bg-white dark:bg-gray-900 rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all border border-gray-100 dark:border-gray-800"
               >
                 <Link to={`/article/${post.slug}`} className="block relative aspect-video overflow-hidden">
                   <img 
@@ -82,23 +82,23 @@ export default function AgenticAI() {
                   </div>
                 </Link>
                 <div className="p-8">
-                  <div className="flex items-center text-xs text-gray-400 mb-4 uppercase font-bold tracking-widest">
+                  <div className="flex items-center text-xs text-gray-400 dark:text-gray-500 mb-4 uppercase font-bold tracking-widest">
                     <span>{post.date}</span>
                     <span className="mx-2">•</span>
                     <span>{post.readTime}</span>
                   </div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-4 group-hover:text-indigo-600 transition-colors line-clamp-2">
+                  <h3 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-4 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors line-clamp-2">
                     <Link to={`/article/${post.slug}`}>{post.title}</Link>
                   </h3>
-                  <p className="text-gray-600 text-sm line-clamp-2 mb-6">
+                  <p className="text-gray-600 dark:text-gray-400 text-sm line-clamp-2 mb-6">
                     {post.excerpt}
                   </p>
-                  <div className="flex items-center justify-between pt-6 border-t border-gray-50">
+                  <div className="flex items-center justify-between pt-6 border-t border-gray-50 dark:border-gray-800">
                     <div className="flex items-center space-x-3">
                       <img src={post.author.avatar} className="w-8 h-8 rounded-full" alt={post.author.name} />
-                      <span className="text-sm font-bold text-gray-700">{post.author.name}</span>
+                      <span className="text-sm font-bold text-gray-700 dark:text-gray-300">{post.author.name}</span>
                     </div>
-                    <Link to={`/article/${post.slug}`} className="w-10 h-10 rounded-full bg-gray-50 flex items-center justify-center group-hover:bg-indigo-600 group-hover:text-white transition-all">
+                    <Link to={`/article/${post.slug}`} className="w-10 h-10 rounded-full bg-gray-50 dark:bg-gray-800 flex items-center justify-center group-hover:bg-indigo-600 dark:group-hover:bg-indigo-500 group-hover:text-white transition-all text-gray-900 dark:text-gray-100">
                       <ArrowRight className="w-5 h-5" />
                     </Link>
                   </div>
@@ -109,7 +109,7 @@ export default function AgenticAI() {
 
           {filteredPosts.length === 0 && (
             <div className="text-center py-20">
-              <p className="text-gray-500 text-lg">No Agentic AI articles found matching your search.</p>
+              <p className="text-gray-500 dark:text-gray-400 text-lg">No Agentic AI articles found matching your search.</p>
             </div>
           )}
         </div>
