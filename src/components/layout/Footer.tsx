@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Facebook, Twitter, Instagram, Linkedin, Github } from 'lucide-react';
+import { NewsletterForm } from './NewsletterForm';
 
 export function Footer() {
   return (
@@ -7,7 +8,7 @@ export function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12 mb-24">
           {/* Brand */}
-          <div className="md:col-span-4 space-y-8">
+          <div className="md:col-span-3 space-y-8">
             <Link to="/" className="flex items-center">
               <span className="text-xl font-light tracking-tighter text-gray-900 dark:text-gray-100">
                 TECNO<span className="font-bold">TRENDS</span>
@@ -57,13 +58,22 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Contact */}
-          <div className="md:col-span-4 space-y-6">
-            <h4 className="text-[10px] font-bold uppercase tracking-widest text-gray-900 dark:text-gray-100">Connect</h4>
-            <p className="text-sm text-gray-400 dark:text-gray-500">Questions or feedback? Reach out to us anytime.</p>
-            <a href="mailto:faisal.hassan.0996@gmail.com" className="block text-lg font-light tracking-tight text-gray-900 dark:text-gray-100 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
-              faisal.hassan.0996@gmail.com
-            </a>
+          {/* Newsletter & Contact */}
+          <div className="md:col-span-5 space-y-6">
+            <h4 className="text-[10px] font-bold uppercase tracking-widest text-gray-900 dark:text-gray-100">Newsletter</h4>
+            <p className="text-sm text-gray-400 dark:text-gray-500 max-w-sm">
+              Subscribe to stay updated with newest Excel tricks, SQL queries, and Agentic AI summaries.
+            </p>
+            <NewsletterForm variant="footer" className="max-w-md" />
+            <div className="text-[11px] text-gray-400 dark:text-gray-500 pt-2">
+              Questions or feedback? Reach out to us at{' '}
+              <a 
+                href="mailto:faisal.hassan.0996@gmail.com" 
+                className="font-bold text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+              >
+                faisal.hassan.0996@gmail.com
+              </a>
+            </div>
           </div>
         </div>
 

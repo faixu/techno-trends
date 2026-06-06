@@ -17,6 +17,7 @@ import {
 import { Navbar } from '../components/layout/Navbar';
 import { Footer } from '../components/layout/Footer';
 import { ConversionStrategy } from '../components/layout/ConversionStrategy';
+import { NewsletterForm } from '../components/layout/NewsletterForm';
 import { InArticleAd, SidebarAd, AffiliateWidget } from '../components/monetization/AdUnits';
 import { MOCK_POSTS } from '../data/posts';
 import { EXCEL_POSTS } from '../data/excelPosts';
@@ -246,6 +247,11 @@ export default function Article() {
             {/* Sidebar */}
             <aside className="lg:col-span-4 space-y-24">
               <SidebarAd />
+
+              {/* Newsletter Widget */}
+              <div className="bg-gray-100/20 dark:bg-gray-900/30 p-8 border border-gray-100 dark:border-gray-800 rounded-sm">
+                <NewsletterForm variant="sidebar" />
+              </div>
               
               <div className="space-y-8">
                 <h3 className="text-[10px] font-bold uppercase tracking-widest text-gray-900 dark:text-gray-100 border-b border-gray-100 dark:border-gray-800 pb-4">Share</h3>
